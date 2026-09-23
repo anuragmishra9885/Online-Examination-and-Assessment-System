@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin overview: users, recent activity, and system status.">
+    <title>Admin | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html" class="active" aria-current="page">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Admin</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Admin</h1>
+                    <p>Users, activity, and system health at a glance.</p>
+                </div>
+                <a href="manage-users.html" class="btn">Manage users</a>
+            </header>
+
+            <!-- Admin sub-navigation -->
+            <nav class="subnav" aria-label="Admin sections">
+                <a href="admin.html" class="active" aria-current="page">Overview</a>
+                <a href="manage-users.html">Manage users</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+
+            <!-- User counts -->
+            <section class="stats" aria-label="User summary">
+                <div class="stat"><span>Total users</span><strong>210</strong></div>
+                <div class="stat"><span>Students</span><strong>180</strong></div>
+                <div class="stat"><span>Teachers</span><strong>26</strong></div>
+                <div class="stat"><span>Admins</span><strong>4</strong></div>
+            </section>
+
+            <!-- Quick links -->
+            <section class="quick-links" aria-label="Quick links">
+                <a href="manage-users.html" class="quick-link">
+                    <strong>Manage users</strong> Add, edit, or remove student, teacher, and admin accounts.
+                </a>
+                <a href="settings.html" class="quick-link">
+                    <strong>Settings</strong> Set pass marks, exam rules, and account policies.
+                </a>
+                <a href="../reports/reports.html" class="quick-link">
+                    <strong>Reports</strong> See how students are performing across exams.
+                </a>
+            </section>
+
+            <!-- Activity and status -->
+            <div class="admin-grid">
+
+                <section class="card" aria-labelledby="activity-title">
+                    <h2 id="activity-title">Recent activity</h2>
+                    <ul class="activity">
+                        <li>
+                            <span>New student registered: Pooja Yadav</span>
+                            <span class="time">20 Sep 2026, 10:42</span>
+                        </li>
+                        <li>
+                            <span>Exam published: Mid-term Test 1</span>
+                            <span class="time">20 Sep 2026, 09:15</span>
+                        </li>
+                        <li>
+                            <span>Password reset for Karan Mehta</span>
+                            <span class="time">19 Sep 2026, 17:30</span>
+                        </li>
+                        <li>
+                            <span>Question Q108 edited in the question bank</span>
+                            <span class="time">19 Sep 2026, 14:05</span>
+                        </li>
+                        <li>
+                            <span>Results published: SQL Basics</span>
+                            <span class="time">12 Sep 2026, 18:00</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="card" aria-labelledby="status-title">
+                    <h2 id="status-title">System status</h2>
+                    <dl class="status-list">
+                        <div>
+                            <dt>Exam server</dt>
+                            <dd><span class="badge live">Running</span></dd>
+                        </div>
+                        <div>
+                            <dt>Question bank</dt>
+                            <dd>320 questions</dd>
+                        </div>
+                        <div>
+                            <dt>Live exams right now</dt>
+                            <dd>2</dd>
+                        </div>
+                        <div>
+                            <dt>Last backup</dt>
+                            <dd>20 Sep 2026, 02:00</dd>
+                        </div>
+                    </dl>
+                </section>
+
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

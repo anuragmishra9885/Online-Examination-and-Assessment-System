@@ -1,0 +1,572 @@
+/* =========================================================
+   Online Examination and Assessment System - shared styles
+   Used by every dashboard page: <link rel="stylesheet" href="../css/style.css">
+   ========================================================= */
+
+
+/* ---------- 1. Variables ---------- */
+
+:root {
+    --ink: #17233a;
+    /* sidebar, headings */
+    --ink-soft: #3b4a63;
+    /* body text */
+    --muted: #6b7a90;
+    /* secondary text */
+    --paper: #f4f6f9;
+    /* page background */
+    --white: #ffffff;
+    --line: #dde3ec;
+    /* borders */
+    --main: #0f766e;
+    /* primary accent (teal) */
+    --main-dark: #0b5a54;
+    --ok: #15803d;
+    --ok-bg: #dcfce7;
+    --warn: #b45309;
+    --warn-bg: #fef3c7;
+    --info: #1d4ed8;
+    --info-bg: #dbeafe;
+    --off: #475569;
+    --off-bg: #e5e9f0;
+    --radius: 8px;
+    --sidebar-w: 230px;
+}
+
+
+/* ---------- 2. Reset ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    background: var(--paper);
+}
+
+a {
+    color: var(--main);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+:focus-visible {
+    outline: 3px solid var(--main);
+    outline-offset: 2px;
+}
+
+
+/* ---------- 3. Page layout (sidebar + content) ---------- */
+
+.layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background: var(--ink);
+    color: #c7d0df;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 14px;
+}
+
+.brand {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    padding: 0 10px 22px;
+    border-bottom: 1px solid #2c3b57;
+    margin-bottom: 16px;
+}
+
+.brand small {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #93a1b8;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    color: #c7d0df;
+    text-decoration: none;
+}
+
+.sidebar nav a:hover {
+    background: #22314d;
+    color: var(--white);
+}
+
+.sidebar nav a.active {
+    background: var(--main);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.sidebar .user-box {
+    margin-top: auto;
+    padding: 12px 10px 0;
+    border-top: 1px solid #2c3b57;
+    font-size: 13px;
+    color: #93a1b8;
+}
+
+.sidebar .user-box strong {
+    display: block;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.content {
+    padding: 28px 32px 48px;
+    min-width: 0;
+    /* lets wide tables scroll instead of stretching the grid */
+}
+
+
+/* ---------- 4. Page header ---------- */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+.page-header p {
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+
+/* ---------- 5. Buttons ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid var(--main);
+    border-radius: var(--radius);
+    background: var(--main);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.btn:hover {
+    background: var(--main-dark);
+    text-decoration: none;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--main);
+}
+
+.btn-outline:hover {
+    background: #e6f4f2;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.btn-danger {
+    background: transparent;
+    border-color: #b91c1c;
+    color: #b91c1c;
+}
+
+.btn-danger:hover {
+    background: #fee2e2;
+}
+
+
+/* ---------- 6. Stat cards ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+}
+
+.stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.stat strong {
+    display: block;
+    margin-top: 2px;
+    font-size: 28px;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+
+/* ---------- 7. Cards / panels ---------- */
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 14px;
+}
+
+
+/* ---------- 8. Filter toolbar ---------- */
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.toolbar .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.toolbar .field.grow {
+    flex: 1 1 220px;
+}
+
+
+/* ---------- 9. Forms ---------- */
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #c3ccd9;
+    border-radius: var(--radius);
+    background: var(--white);
+    font: inherit;
+    color: var(--ink);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #99d5cf;
+    border-color: var(--main);
+}
+
+
+/* ---------- 10. Tables ---------- */
+
+.table-wrap {
+    overflow-x: auto;
+    /* table scrolls sideways on small screens */
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+thead th {
+    background: #eef2f7;
+    color: var(--ink);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+td.actions {
+    white-space: nowrap;
+}
+
+td .sub {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+
+/* ---------- 11. Status badges ---------- */
+
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge.live {
+    background: var(--ok-bg);
+    color: var(--ok);
+}
+
+.badge.scheduled {
+    background: var(--info-bg);
+    color: var(--info);
+}
+
+.badge.completed {
+    background: var(--off-bg);
+    color: var(--off);
+}
+
+.badge.draft {
+    background: var(--warn-bg);
+    color: var(--warn);
+}
+
+.badge.pass {
+    background: var(--ok-bg);
+    color: var(--ok);
+}
+
+.badge.fail {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* ---------- 12. Pagination ---------- */
+
+.pagination {
+    display: flex;
+    gap: 6px;
+    margin-top: 16px;
+    justify-content: flex-end;
+}
+
+.pagination a {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background: var(--main);
+    border-color: var(--main);
+    color: var(--white);
+}
+
+
+/* ---------- 13. Responsive ---------- */
+
+@media (max-width: 860px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        position: static;
+        height: auto;
+        padding: 14px;
+    }
+    .brand {
+        border-bottom: none;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+    }
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .sidebar .user-box {
+        display: none;
+    }
+    .content {
+        padding: 20px 16px 40px;
+    }
+}
+
+
+/* ---------- 14. Print ---------- */
+
+@media print {
+    .sidebar,
+    .toolbar,
+    .btn,
+    .pagination {
+        display: none;
+    }
+    .layout {
+        display: block;
+    }
+    body {
+        background: var(--white);
+    }
+}
+
+
+/* =========================================================
+   15. Form layout (added in Step 2 for create-exam.html)
+   ========================================================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.form-grid .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grid .field.full {
+    grid-column: 1 / -1;
+}
+
+.req {
+    color: #b91c1c;
+}
+
+.hint {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+fieldset.group {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 16px 14px;
+}
+
+fieldset.group legend {
+    padding: 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.choice-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.choice-row input[type="radio"],
+.choice-row input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--main);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+@media print {
+    .form-actions {
+        display: none;
+    }
+}

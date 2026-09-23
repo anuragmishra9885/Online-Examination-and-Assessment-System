@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and manage registered students.">
+    <title>Students | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html" class="active" aria-current="page">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Students</h1>
+                    <p>Everyone registered to take exams.</p>
+                </div>
+                <a href="../admin/manage-users.html" class="btn">Add student</a>
+            </header>
+
+            <!-- Summary cards -->
+            <section class="stats" aria-label="Student summary">
+                <div class="stat"><span>Total students</span><strong>180</strong></div>
+                <div class="stat"><span>Active</span><strong>164</strong></div>
+                <div class="stat"><span>Inactive</span><strong>16</strong></div>
+                <div class="stat"><span>Average score</span><strong>68%</strong></div>
+            </section>
+
+            <!-- Filters -->
+            <form class="toolbar" action="#" method="get">
+                <div class="field grow">
+                    <label for="search">Search students</label>
+                    <input type="search" id="search" name="search" placeholder="Search by name, roll number, or email">
+                </div>
+
+                <div class="field">
+                    <label for="batch">Batch</label>
+                    <select id="batch" name="batch">
+            <option value="">All batches</option>
+            <option>B.Tech CSE - 2nd year</option>
+            <option>B.Tech CSE - 3rd year</option>
+            <option>B.Tech CSE - 4th year</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+            <option value="">All statuses</option>
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+                </div>
+
+                <button type="submit" class="btn btn-outline">Apply filters</button>
+            </form>
+
+            <!-- Students table
+           Status badges reuse existing classes: Active = .live (green), Inactive = .completed (grey) -->
+            <div class="table-wrap">
+                <table>
+                    <caption style="position:absolute;left:-9999px;">List of students</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Roll no.</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Batch</th>
+                            <th scope="col">Exams taken</th>
+                            <th scope="col">Average score</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2415000101</td>
+                            <td>Riya Sharma <span class="sub">riya.sharma@example.com</span></td>
+                            <td>B.Tech CSE - 3rd year</td>
+                            <td>8</td>
+                            <td>82%</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td class="actions">
+                                <a href="student-profile.html" class="btn btn-outline btn-sm">View profile</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2415000117</td>
+                            <td>Aman Verma <span class="sub">aman.verma@example.com</span></td>
+                            <td>B.Tech CSE - 3rd year</td>
+                            <td>7</td>
+                            <td>74%</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td class="actions">
+                                <a href="student-profile.html" class="btn btn-outline btn-sm">View profile</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2415000132</td>
+                            <td>Neha Singh <span class="sub">neha.singh@example.com</span></td>
+                            <td>B.Tech CSE - 3rd year</td>
+                            <td>8</td>
+                            <td>91%</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td class="actions">
+                                <a href="student-profile.html" class="btn btn-outline btn-sm">View profile</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2315000208</td>
+                            <td>Karan Mehta <span class="sub">karan.mehta@example.com</span></td>
+                            <td>B.Tech CSE - 4th year</td>
+                            <td>6</td>
+                            <td>58%</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td class="actions">
+                                <a href="student-profile.html" class="btn btn-outline btn-sm">View profile</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2515000045</td>
+                            <td>Pooja Yadav <span class="sub">pooja.yadav@example.com</span></td>
+                            <td>B.Tech CSE - 2nd year</td>
+                            <td>4</td>
+                            <td>66%</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td class="actions">
+                                <a href="student-profile.html" class="btn btn-outline btn-sm">View profile</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2315000219</td>
+                            <td>Rohit Gupta <span class="sub">rohit.gupta@example.com</span></td>
+                            <td>B.Tech CSE - 4th year</td>
+                            <td>2</td>
+                            <td>41%</td>
+                            <td><span class="badge completed">Inactive</span></td>
+                            <td class="actions">
+                                <a href="student-profile.html" class="btn btn-outline btn-sm">View profile</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="pagination" aria-label="Pagination">
+                <a href="#">Previous</a>
+                <a href="#" class="active" aria-current="page">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next</a>
+            </nav>
+
+        </main>
+    </div>
+</body>
+
+</html>

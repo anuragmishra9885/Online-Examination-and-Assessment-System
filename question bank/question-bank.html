@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse and manage the question bank.">
+    <title>Question Bank | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar (same block as exams.html; only the "active" link changes) ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html" class="active" aria-current="page">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Question bank</h1>
+                    <p>Every question you can reuse across exams.</p>
+                </div>
+                <a href="add-question.html" class="btn">Add question</a>
+            </header>
+
+            <!-- Summary cards -->
+            <section class="stats" aria-label="Question bank summary">
+                <div class="stat"><span>Total questions</span><strong>320</strong></div>
+                <div class="stat"><span>Easy</span><strong>120</strong></div>
+                <div class="stat"><span>Medium</span><strong>140</strong></div>
+                <div class="stat"><span>Hard</span><strong>60</strong></div>
+            </section>
+
+            <!-- Filters -->
+            <form class="toolbar" action="#" method="get">
+                <div class="field grow">
+                    <label for="search">Search questions</label>
+                    <input type="search" id="search" name="search" placeholder="Search by keyword">
+                </div>
+
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+            <option value="">All subjects</option>
+            <option>Data Structures</option>
+            <option>Database Systems</option>
+            <option>Web Technologies</option>
+            <option>Operating Systems</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty" name="difficulty">
+            <option value="">All levels</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="type">Type</label>
+                    <select id="type" name="type">
+            <option value="">All types</option>
+            <option>Multiple choice</option>
+            <option>True / False</option>
+            <option>Descriptive</option>
+          </select>
+                </div>
+
+                <button type="submit" class="btn btn-outline">Apply filters</button>
+            </form>
+
+            <!-- Questions table
+           Difficulty badges reuse existing classes:
+           Easy = .pass (green), Medium = .draft (amber), Hard = .fail (red) -->
+            <div class="table-wrap">
+                <table>
+                    <caption style="position:absolute;left:-9999px;">List of questions</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Question</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Difficulty</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Marks</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Q101</td>
+                            <td>Which HTML tag is used to create a hyperlink? <span class="sub">Correct answer: &lt;a&gt;</span></td>
+                            <td>Web Technologies</td>
+                            <td><span class="badge pass">Easy</span></td>
+                            <td>Multiple choice</td>
+                            <td>1</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q102</td>
+                            <td>Which CSS property adds space outside an element's border? <span class="sub">Correct answer: margin</span></td>
+                            <td>Web Technologies</td>
+                            <td><span class="badge pass">Easy</span></td>
+                            <td>Multiple choice</td>
+                            <td>1</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q103</td>
+                            <td>A stack follows the Last In, First Out (LIFO) principle. <span class="sub">Correct answer: True</span></td>
+                            <td>Data Structures</td>
+                            <td><span class="badge pass">Easy</span></td>
+                            <td>True / False</td>
+                            <td>1</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q104</td>
+                            <td>What is the time complexity of binary search on a sorted array? <span class="sub">Correct answer: O(log n)</span></td>
+                            <td>Data Structures</td>
+                            <td><span class="badge draft">Medium</span></td>
+                            <td>Multiple choice</td>
+                            <td>2</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q105</td>
+                            <td>Which SQL clause filters rows after GROUP BY has been applied? <span class="sub">Correct answer: HAVING</span></td>
+                            <td>Database Systems</td>
+                            <td><span class="badge draft">Medium</span></td>
+                            <td>Multiple choice</td>
+                            <td>2</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q106</td>
+                            <td>Explain the difference between a process and a thread. <span class="sub">Answer is written by the student</span></td>
+                            <td>Operating Systems</td>
+                            <td><span class="badge draft">Medium</span></td>
+                            <td>Descriptive</td>
+                            <td>5</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q107</td>
+                            <td>Which condition must hold for a deadlock to occur? <span class="sub">Correct answer: Circular wait</span></td>
+                            <td>Operating Systems</td>
+                            <td><span class="badge fail">Hard</span></td>
+                            <td>Multiple choice</td>
+                            <td>3</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Q108</td>
+                            <td>Every relation in 3NF is also in BCNF. <span class="sub">Correct answer: False</span></td>
+                            <td>Database Systems</td>
+                            <td><span class="badge fail">Hard</span></td>
+                            <td>True / False</td>
+                            <td>2</td>
+                            <td class="actions">
+                                <a href="add-question.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="pagination" aria-label="Pagination">
+                <a href="#">Previous</a>
+                <a href="#" class="active" aria-current="page">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next</a>
+            </nav>
+
+        </main>
+    </div>
+</body>
+
+</html>

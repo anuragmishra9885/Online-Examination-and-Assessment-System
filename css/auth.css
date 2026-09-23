@@ -1,0 +1,180 @@
+/* =========================================================
+   auth.css - styles for login.html (and any sign-in page)
+   Load AFTER style.css:
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/auth.css">
+   ========================================================= */
+
+
+/* ---------- Two-panel screen: intro on the left, form on the right ---------- */
+
+.auth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+
+/* left panel */
+
+.auth-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 48px;
+    background: var(--ink);
+    color: #c7d0df;
+}
+
+.auth-intro .brand {
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 6px;
+    font-size: 22px;
+}
+
+.auth-intro h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    color: var(--white);
+}
+
+.auth-intro ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.auth-intro li {
+    padding-left: 26px;
+    position: relative;
+}
+
+.auth-intro li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--main);
+}
+
+.auth-intro .note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #93a1b8;
+}
+
+
+/* right panel */
+
+.auth-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h2 {
+    font-size: 24px;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.auth-box .lead {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.auth-box .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.auth-box .btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 4px;
+}
+
+
+/* remember me + forgot password row */
+
+.auth-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.auth-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.auth-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--main);
+}
+
+.auth-foot {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+}
+
+
+/* demo sign-in hint */
+
+.demo-note {
+    margin-top: 16px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+
+/* ---------- Responsive: stack the panels on small screens ---------- */
+
+@media (max-width: 820px) {
+    .auth {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .auth-intro {
+        padding: 28px 20px;
+    }
+    .auth-intro h1 {
+        font-size: 24px;
+    }
+    .auth-intro ul,
+    .auth-intro .note {
+        display: none;
+        /* keep the sign-in form near the top on a phone */
+    }
+}

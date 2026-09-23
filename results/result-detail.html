@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Score summary and answer review for a completed exam.">
+    <title>Result Detail | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Styles used only on this page (internal CSS) -->
+    <style>
+        .score-card {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .score-main {
+            min-width: 170px;
+            padding-right: 32px;
+            border-right: 1px solid var(--line);
+        }
+        
+        .score-main strong {
+            display: block;
+            font-size: 44px;
+            line-height: 1.1;
+            color: var(--ink);
+        }
+        
+        .score-main span {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+        
+        .meta {
+            flex: 1 1 320px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px 24px;
+        }
+        
+        .meta dt {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .meta dd {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        .review-item {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-left: 6px solid var(--line);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin-bottom: 14px;
+        }
+        
+        .review-item.correct {
+            border-left-color: var(--ok);
+        }
+        
+        .review-item.wrong {
+            border-left-color: #b91c1c;
+        }
+        
+        .review-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        .review-head .marks {
+            margin-left: 6px;
+        }
+        
+        .review-item .q-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+        
+        .answer-line {
+            margin-top: 2px;
+        }
+        
+        .explain {
+            margin-top: 8px;
+            padding: 8px 12px;
+            border-radius: var(--radius);
+            background: #f1f5f9;
+            font-size: 14px;
+        }
+        
+        .review-item code {
+            padding: 1px 6px;
+            border-radius: 4px;
+            background: #eef2f7;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .score-main {
+                padding-right: 0;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html" class="active" aria-current="page">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Result detail</h1>
+                    <p>HTML and CSS Quiz, submitted by Riya Sharma.</p>
+                </div>
+                <a href="results.html" class="btn btn-outline">Back to results</a>
+            </header>
+
+            <!-- Score summary -->
+            <section class="card score-card" aria-label="Score summary">
+                <div class="score-main">
+                    <span>Score</span>
+                    <strong>8 / 10</strong>
+                    <span class="badge pass" style="display:inline-block;margin:8px 0 0;">Passed</span>
+                </div>
+
+                <dl class="meta">
+                    <div><dt>Student</dt>
+                        <dd>Riya Sharma</dd>
+                    </div>
+                    <div><dt>Roll number</dt>
+                        <dd>2415000101</dd>
+                    </div>
+                    <div><dt>Exam</dt>
+                        <dd>HTML and CSS Quiz</dd>
+                    </div>
+                    <div><dt>Subject</dt>
+                        <dd>Web Technologies</dd>
+                    </div>
+                    <div><dt>Submitted on</dt>
+                        <dd>20 Sep 2026</dd>
+                    </div>
+                    <div><dt>Percentage and grade</dt>
+                        <dd>80%, grade A</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <!-- Answer breakdown -->
+            <section class="stats" aria-label="Answer breakdown">
+                <div class="stat"><span>Correct</span><strong>8</strong></div>
+                <div class="stat"><span>Incorrect</span><strong>2</strong></div>
+                <div class="stat"><span>Not answered</span><strong>0</strong></div>
+                <div class="stat"><span>Time taken</span><strong>21 min</strong></div>
+            </section>
+
+            <!-- Question by question review -->
+            <h2 style="font-size:18px;color:var(--ink);margin-bottom:12px;">Answer review</h2>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 1</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which HTML tag is used to create a hyperlink?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>&lt;a&gt;</code></p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 2</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which attribute gives an image alternative text for screen readers?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>alt</code></p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 3</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which CSS property changes the colour of text?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>color</code></p>
+            </article>
+
+            <article class="review-item wrong">
+                <div class="review-head">
+                    <span>Question 4</span>
+                    <span><span class="badge fail">Incorrect</span> <span class="marks">0 / 1 mark</span></span>
+                </div>
+                <p class="q-text">In the CSS box model, which layer sits directly outside the border?</p>
+                <p class="answer-line"><strong>Your answer:</strong> Padding</p>
+                <p class="answer-line"><strong>Correct answer:</strong> Margin</p>
+                <p class="explain">From the inside out the layers are content, padding, border, and margin. Padding sits inside the border.</p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 5</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which CSS selector targets the element with <code>id="header"</code>?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>#header</code></p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 6</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which tag defines the largest heading?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>&lt;h1&gt;</code></p>
+            </article>
+
+            <article class="review-item wrong">
+                <div class="review-head">
+                    <span>Question 7</span>
+                    <span><span class="badge fail">Incorrect</span> <span class="marks">0 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which value of <code>display</code> turns an element into a Flexbox container?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>block</code></p>
+                <p class="answer-line"><strong>Correct answer:</strong> <code>flex</code></p>
+                <p class="explain"><code>display: flex</code> makes the element a Flexbox container. <code>block</code> only stacks it as a normal block.</p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 8</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which semantic element is meant for a group of navigation links?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>&lt;nav&gt;</code></p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 9</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which CSS property adds space outside an element's border?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>margin</code></p>
+            </article>
+
+            <article class="review-item correct">
+                <div class="review-head">
+                    <span>Question 10</span>
+                    <span><span class="badge pass">Correct</span> <span class="marks">1 / 1 mark</span></span>
+                </div>
+                <p class="q-text">Which attribute makes a form field mandatory?</p>
+                <p class="answer-line"><strong>Your answer:</strong> <code>required</code></p>
+            </article>
+
+        </main>
+    </div>
+</body>
+
+</html>

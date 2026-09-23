@@ -1,0 +1,141 @@
+/* =========================================================
+   admin.css - styles shared by the Admin module pages
+   (admin.html, manage-users.html, settings.html)
+   Load AFTER style.css:
+   <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="../css/admin.css">
+   ========================================================= */
+
+
+/* ---------- Sub-navigation tabs (Overview / Manage users / Settings) ---------- */
+
+.subnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.subnav a {
+    margin-bottom: -1px;
+    /* lets the active underline sit on top of the border */
+    padding: 10px 16px;
+    border-bottom: 3px solid transparent;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.subnav a:hover {
+    color: var(--ink);
+}
+
+.subnav a.active {
+    border-bottom-color: var(--main);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+
+/* ---------- Quick link cards ---------- */
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.quick-link {
+    display: block;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    text-decoration: none;
+}
+
+.quick-link:hover {
+    border-color: var(--main);
+    text-decoration: none;
+}
+
+.quick-link strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 16px;
+    color: var(--ink);
+}
+
+
+/* ---------- Two-column area (activity + status) ---------- */
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.admin-grid .card {
+    margin-bottom: 0;
+}
+
+
+/* ---------- Recent activity list ---------- */
+
+.activity {
+    list-style: none;
+}
+
+.activity li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.activity li:first-child {
+    padding-top: 0;
+}
+
+.activity li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.activity .time {
+    flex-shrink: 0;
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+
+/* ---------- System status rows ---------- */
+
+.status-list {
+    display: grid;
+    gap: 14px;
+}
+
+.status-list dt {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.status-list dd {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}

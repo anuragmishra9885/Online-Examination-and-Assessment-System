@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Examination and Assessment System: create exams, take them in the browser, and see results and reports.">
+    <title>Online Examination and Assessment System</title>
+
+    <!-- This page sits in the root folder, so there is no ../ in the paths -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- ===== Navbar ===== -->
+    <header class="site-header">
+        <a href="index.html" class="logo">Online Exam System</a>
+
+        <nav class="site-nav" aria-label="Site menu">
+            <a href="#features">Features</a>
+            <a href="#roles">Roles</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#faq">FAQ</a>
+            <a href="login.html" class="btn btn-sm">Sign in</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== Hero ===== -->
+        <section class="hero">
+            <div class="container">
+
+                <div>
+                    <h1>Run exams online, from question paper to result.</h1>
+                    <p class="lead">
+                        Teachers build exams from a shared question bank. Students take them in the browser. Results and reports are ready as soon as the exam ends.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="login.html" class="btn btn-lg">Sign in</a>
+                        <a href="#features" class="btn btn-ghost btn-lg">See the features</a>
+                    </div>
+                </div>
+
+                <!-- Sample of what a student sees -->
+                <div class="preview" aria-label="Sample exam question">
+                    <div class="preview-top">
+                        <span>Question 3 of 10</span>
+                        <span>Time left <strong>24:10</strong></span>
+                    </div>
+                    <p class="preview-q">Which CSS property changes the colour of text?</p>
+                    <div class="pv-option">font-color</div>
+                    <div class="pv-option">text-color</div>
+                    <div class="pv-option selected">color</div>
+                    <div class="pv-option">fg-color</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== Features: one card per module ===== -->
+        <section id="features">
+            <div class="container">
+                <h2>Everything an exam needs, in six modules</h2>
+                <p class="section-lead">Each module has its own pages, and they all share one layout so the system is easy to learn.</p>
+
+                <div class="features">
+                    <a href="exams/exams.html" class="feature">
+                        <h3>Exams</h3>
+                        <p>Create, schedule, and publish exams, then track which are draft, live, or completed.</p>
+                    </a>
+                    <a href="question-bank/question-bank.html" class="feature">
+                        <h3>Question bank</h3>
+                        <p>Store questions by subject, difficulty, and type, and reuse them across exams.</p>
+                    </a>
+                    <a href="students/students.html" class="feature">
+                        <h3>Students</h3>
+                        <p>Keep every student's details and exam history in one profile.</p>
+                    </a>
+                    <a href="results/results.html" class="feature">
+                        <h3>Results</h3>
+                        <p>See scores, grades, and pass or fail status, and review each answer.</p>
+                    </a>
+                    <a href="reports/reports.html" class="feature">
+                        <h3>Reports</h3>
+                        <p>Compare subjects and grades with simple charts, and print a summary.</p>
+                    </a>
+                    <a href="admin/admin.html" class="feature">
+                        <h3>Admin</h3>
+                        <p>Manage user accounts and set the pass marks and rules for the whole system.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Roles ===== -->
+        <section id="roles" class="section-alt">
+            <div class="container">
+                <h2>Built for three kinds of users</h2>
+                <p class="section-lead">What you see after signing in depends on your role.</p>
+
+                <div class="roles">
+                    <article class="role">
+                        <h3>Admin</h3>
+                        <ul>
+                            <li>Add, edit, and remove user accounts</li>
+                            <li>Set pass marks, grading, and exam rules</li>
+                            <li>Watch activity and system status</li>
+                        </ul>
+                    </article>
+                    <article class="role">
+                        <h3>Teacher</h3>
+                        <ul>
+                            <li>Add questions to the question bank</li>
+                            <li>Create, schedule, and publish exams</li>
+                            <li>Check results and reports for a class</li>
+                        </ul>
+                    </article>
+                    <article class="role">
+                        <h3>Student</h3>
+                        <ul>
+                            <li>Take an exam in the browser</li>
+                            <li>See the score right after submitting</li>
+                            <li>Review which answers were right or wrong</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== How it works (a real sequence, so it is numbered) ===== -->
+        <section id="how-it-works">
+            <div class="container">
+                <h2>How an exam runs</h2>
+                <p class="section-lead">Four steps from an empty question bank to a finished report.</p>
+
+                <ol class="steps">
+                    <li>
+                        <h3>Add questions</h3>
+                        <p>Teachers write questions and file them by subject and difficulty.</p>
+                    </li>
+                    <li>
+                        <h3>Create the exam</h3>
+                        <p>Pick the date, duration, and marks, then choose the questions to include.</p>
+                    </li>
+                    <li>
+                        <h3>Students take it</h3>
+                        <p>Students sign in, answer each question, and submit.</p>
+                    </li>
+                    <li>
+                        <h3>Read the results</h3>
+                        <p>Scores, answer reviews, and class reports are available straight away.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== FAQ (details and summary, no JavaScript needed) ===== -->
+        <section id="faq" class="section-alt">
+            <div class="container">
+                <h2>Common questions</h2>
+                <p class="section-lead">Click a question to open the answer.</p>
+
+                <div class="faq">
+                    <details>
+                        <summary>Which question types are supported?</summary>
+                        <p>Multiple choice, true or false, and descriptive questions can be stored in the question bank.</p>
+                    </details>
+                    <details>
+                        <summary>Can students see their answers after the exam?</summary>
+                        <p>Yes, if the teacher turns on answer review for that exam. Each answer is shown with the correct one and a short explanation.</p>
+                    </details>
+                    <details>
+                        <summary>Does it work on a phone?</summary>
+                        <p>Yes. Every page adjusts to small screens, and the question panel moves above the questions on a phone.</p>
+                    </details>
+                    <details>
+                        <summary>Is this a finished product?</summary>
+                        <p>This is a front-end prototype built with HTML and CSS. Sign-in, timing, and automatic grading need a backend and JavaScript, which can be added later.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Closing call to action ===== -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to take or set an exam?</h2>
+                <p>Sign in with the account your institution gave you.</p>
+                <a href="login.html" class="btn btn-white btn-lg">Sign in</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Online Examination and Assessment System. A B.Tech CSE project.</p>
+        <p>
+            <a href="login.html">Sign in</a>
+            <a href="#features">Features</a>
+            <a href="#faq">FAQ</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

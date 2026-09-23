@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student profile and exam history.">
+    <title>Student Profile | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Styles used only on this page (internal CSS) -->
+    <style>
+        .profile-head {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        
+        .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--main);
+            color: var(--white);
+            font-size: 26px;
+            font-weight: 700;
+        }
+        
+        .profile-head h2 {
+            margin-bottom: 2px;
+        }
+        
+        .profile-head p {
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+        
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px 24px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+        }
+        
+        .details dt {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .details dd {
+            color: var(--ink);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html" class="active" aria-current="page">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Student profile</h1>
+                    <p>Personal details and exam history.</p>
+                </div>
+                <a href="students.html" class="btn btn-outline">Back to students</a>
+            </header>
+
+            <!-- Profile card -->
+            <section class="card" aria-labelledby="student-name">
+                <div class="profile-head">
+                    <div class="avatar" aria-hidden="true">RS</div>
+                    <div>
+                        <h2 id="student-name">Riya Sharma</h2>
+                        <p>B.Tech CSE - 3rd year</p>
+                        <span class="badge live">Active</span>
+                    </div>
+                </div>
+
+                <!-- Description list: term + value pairs -->
+                <dl class="details">
+                    <div>
+                        <dt>Roll number</dt>
+                        <dd>2415000101</dd>
+                    </div>
+                    <div>
+                        <dt>Email</dt>
+                        <dd>riya.sharma@example.com</dd>
+                    </div>
+                    <div>
+                        <dt>Phone</dt>
+                        <dd>+91 90000 00000</dd>
+                    </div>
+                    <div>
+                        <dt>Batch</dt>
+                        <dd>B.Tech CSE - 3rd year</dd>
+                    </div>
+                    <div>
+                        <dt>Registered on</dt>
+                        <dd>1 Aug 2026</dd>
+                    </div>
+                    <div>
+                        <dt>Last login</dt>
+                        <dd>20 Sep 2026</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <!-- Performance summary -->
+            <section class="stats" aria-label="Performance summary">
+                <div class="stat"><span>Exams taken</span><strong>8</strong></div>
+                <div class="stat"><span>Average score</span><strong>82%</strong></div>
+                <div class="stat"><span>Highest score</span><strong>96%</strong></div>
+                <div class="stat"><span>Passed</span><strong>8 of 8</strong></div>
+            </section>
+
+            <!-- Exam history -->
+            <section aria-labelledby="history-title">
+                <h2 id="history-title" style="font-size:18px;color:var(--ink);margin-bottom:12px;">Recent exams</h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <caption style="position:absolute;left:-9999px;">Recent exams taken by this student</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Exam</th>
+                                <th scope="col">Subject</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Percentage</th>
+                                <th scope="col">Result</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SQL Basics</td>
+                                <td>Database Systems</td>
+                                <td>12 Sep 2026</td>
+                                <td>23 / 30</td>
+                                <td>77%</td>
+                                <td><span class="badge pass">Passed</span></td>
+                                <td class="actions"><a href="../results/result-detail.html" class="btn btn-outline btn-sm">View result</a></td>
+                            </tr>
+                            <tr>
+                                <td>HTML Basics Quiz</td>
+                                <td>Web Technologies</td>
+                                <td>5 Sep 2026</td>
+                                <td>22 / 25</td>
+                                <td>88%</td>
+                                <td><span class="badge pass">Passed</span></td>
+                                <td class="actions"><a href="../results/result-detail.html" class="btn btn-outline btn-sm">View result</a></td>
+                            </tr>
+                            <tr>
+                                <td>Process Scheduling Quiz</td>
+                                <td>Operating Systems</td>
+                                <td>28 Aug 2026</td>
+                                <td>16 / 20</td>
+                                <td>80%</td>
+                                <td><span class="badge pass">Passed</span></td>
+                                <td class="actions"><a href="../results/result-detail.html" class="btn btn-outline btn-sm">View result</a></td>
+                            </tr>
+                            <tr>
+                                <td>Stacks and Queues</td>
+                                <td>Data Structures</td>
+                                <td>18 Aug 2026</td>
+                                <td>48 / 50</td>
+                                <td>96%</td>
+                                <td><span class="badge pass">Passed</span></td>
+                                <td class="actions"><a href="../results/result-detail.html" class="btn btn-outline btn-sm">View result</a></td>
+                            </tr>
+                            <tr>
+                                <td>Normalization Test</td>
+                                <td>Database Systems</td>
+                                <td>8 Aug 2026</td>
+                                <td>18 / 25</td>
+                                <td>72%</td>
+                                <td><span class="badge pass">Passed</span></td>
+                                <td class="actions"><a href="../results/result-detail.html" class="btn btn-outline btn-sm">View result</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

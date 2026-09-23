@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create and schedule a new exam.">
+    <title>Create Exam | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html" class="active" aria-current="page">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Create exam</h1>
+                    <p>Fill in the details below. Fields marked <span class="req">*</span> are required.</p>
+                </div>
+                <a href="exams.html" class="btn btn-outline">Back to exams</a>
+            </header>
+
+            <form action="#" method="post">
+
+                <!-- 1. Basic details -->
+                <section class="card">
+                    <h2>Basic details</h2>
+                    <div class="form-grid">
+
+                        <div class="field full">
+                            <label for="title">Exam title <span class="req">*</span></label>
+                            <input type="text" id="title" name="title" placeholder="e.g. Mid-term Test 1" maxlength="100" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="subject">Subject <span class="req">*</span></label>
+                            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option>Data Structures</option>
+                <option>Database Systems</option>
+                <option>Web Technologies</option>
+                <option>Operating Systems</option>
+              </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="course">Class / batch <span class="req">*</span></label>
+                            <select id="course" name="course" required>
+                <option value="">Select a batch</option>
+                <option>B.Tech CSE - 2nd year</option>
+                <option>B.Tech CSE - 3rd year</option>
+                <option>B.Tech CSE - 4th year</option>
+              </select>
+                        </div>
+
+                        <div class="field full">
+                            <fieldset class="group">
+                                <legend>Exam type <span class="req">*</span></legend>
+                                <div class="choice-row">
+                                    <label><input type="radio" name="type" value="mcq" checked> Multiple choice</label>
+                                    <label><input type="radio" name="type" value="descriptive"> Descriptive</label>
+                                    <label><input type="radio" name="type" value="mixed"> Mixed</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 2. Schedule and marks -->
+                <section class="card">
+                    <h2>Schedule and marks</h2>
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="date">Exam date <span class="req">*</span></label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="start-time">Start time <span class="req">*</span></label>
+                            <input type="time" id="start-time" name="start_time" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="duration">Duration (minutes) <span class="req">*</span></label>
+                            <input type="number" id="duration" name="duration" min="5" max="300" step="5" placeholder="60" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="total-marks">Total marks <span class="req">*</span></label>
+                            <input type="number" id="total-marks" name="total_marks" min="1" max="500" placeholder="40" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="pass-marks">Passing marks <span class="req">*</span></label>
+                            <input type="number" id="pass-marks" name="pass_marks" min="1" max="500" placeholder="16" required>
+                            <span class="hint">Must not be more than total marks.</span>
+                        </div>
+
+                        <div class="field">
+                            <label for="neg-marks">Negative marking</label>
+                            <select id="neg-marks" name="negative_marking">
+                <option value="0">None</option>
+                <option value="0.25">0.25 per wrong answer</option>
+                <option value="0.5">0.5 per wrong answer</option>
+                <option value="1">1 per wrong answer</option>
+              </select>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 3. Questions -->
+                <section class="card">
+                    <h2>Questions</h2>
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="q-source">Question source <span class="req">*</span></label>
+                            <select id="q-source" name="question_source" required>
+                <option value="">Choose how to add questions</option>
+                <option value="bank">Pick from the question bank</option>
+                <option value="random">Random from the question bank</option>
+                <option value="manual">Add manually later</option>
+              </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="q-count">Number of questions</label>
+                            <input type="number" id="q-count" name="question_count" min="1" max="200" placeholder="40">
+                        </div>
+
+                        <div class="field">
+                            <label for="difficulty">Difficulty</label>
+                            <select id="difficulty" name="difficulty">
+                <option value="mixed">Mixed</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 4. Instructions and rules -->
+                <section class="card">
+                    <h2>Instructions and rules</h2>
+                    <div class="form-grid">
+
+                        <div class="field full">
+                            <label for="instructions">Instructions for students</label>
+                            <textarea id="instructions" name="instructions" placeholder="e.g. Read every question carefully. Each question carries equal marks."></textarea>
+                        </div>
+
+                        <div class="field full">
+                            <fieldset class="group">
+                                <legend>Exam settings</legend>
+                                <div class="choice-row">
+                                    <label><input type="checkbox" name="shuffle_questions" checked> Shuffle questions</label>
+                                    <label><input type="checkbox" name="shuffle_options"> Shuffle answer options</label>
+                                    <label><input type="checkbox" name="show_result" checked> Show result after submitting</label>
+                                    <label><input type="checkbox" name="allow_review"> Allow answer review</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Actions -->
+                <div class="form-actions">
+                    <a href="exams.html" class="btn btn-outline">Cancel</a>
+                    <button type="reset" class="btn btn-outline">Reset form</button>
+                    <button type="submit" name="action" value="draft" class="btn btn-outline">Save as draft</button>
+                    <button type="submit" name="action" value="publish" class="btn">Publish exam</button>
+                </div>
+
+            </form>
+
+        </main>
+    </div>
+</body>
+
+</html>

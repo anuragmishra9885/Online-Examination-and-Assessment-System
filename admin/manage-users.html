@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add, edit, and remove user accounts.">
+    <title>Manage Users | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html" class="active" aria-current="page">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Admin</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Manage users</h1>
+                    <p>Create accounts and control who can sign in.</p>
+                </div>
+                <a href="#add-user" class="btn">Add user</a>
+            </header>
+
+            <!-- Admin sub-navigation -->
+            <nav class="subnav" aria-label="Admin sections">
+                <a href="admin.html">Overview</a>
+                <a href="manage-users.html" class="active" aria-current="page">Manage users</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+
+            <!-- Filters -->
+            <form class="toolbar" action="#" method="get">
+                <div class="field grow">
+                    <label for="search">Search users</label>
+                    <input type="search" id="search" name="search" placeholder="Search by name or email">
+                </div>
+
+                <div class="field">
+                    <label for="role-filter">Role</label>
+                    <select id="role-filter" name="role">
+            <option value="">All roles</option>
+            <option>Admin</option>
+            <option>Teacher</option>
+            <option>Student</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="status-filter">Status</label>
+                    <select id="status-filter" name="status">
+            <option value="">All statuses</option>
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+                </div>
+
+                <button type="submit" class="btn btn-outline">Apply filters</button>
+            </form>
+
+            <!-- Users table
+           Role badges reuse existing classes: Admin = .draft (amber), Teacher = .scheduled (blue), Student = .completed (grey)
+           Status badges: Active = .live (green), Inactive = .completed (grey) -->
+            <div class="table-wrap">
+                <table>
+                    <caption style="position:absolute;left:-9999px;">List of users</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">User</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Batch or department</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Last login</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunita Joshi <span class="sub">sunita.joshi@example.com</span></td>
+                            <td><span class="badge draft">Admin</span></td>
+                            <td>Administration</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td>20 Sep 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Meera Kapoor <span class="sub">meera.kapoor@example.com</span></td>
+                            <td><span class="badge scheduled">Teacher</span></td>
+                            <td>Computer Science</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td>20 Sep 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Vikram Rao <span class="sub">vikram.rao@example.com</span></td>
+                            <td><span class="badge scheduled">Teacher</span></td>
+                            <td>Computer Science</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td>19 Sep 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Riya Sharma <span class="sub">riya.sharma@example.com</span></td>
+                            <td><span class="badge completed">Student</span></td>
+                            <td>B.Tech CSE - 3rd year</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td>20 Sep 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Aman Verma <span class="sub">aman.verma@example.com</span></td>
+                            <td><span class="badge completed">Student</span></td>
+                            <td>B.Tech CSE - 3rd year</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td>19 Sep 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Karan Mehta <span class="sub">karan.mehta@example.com</span></td>
+                            <td><span class="badge completed">Student</span></td>
+                            <td>B.Tech CSE - 4th year</td>
+                            <td><span class="badge live">Active</span></td>
+                            <td>19 Sep 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rohit Gupta <span class="sub">rohit.gupta@example.com</span></td>
+                            <td><span class="badge completed">Student</span></td>
+                            <td>B.Tech CSE - 4th year</td>
+                            <td><span class="badge completed">Inactive</span></td>
+                            <td>2 Aug 2026</td>
+                            <td class="actions">
+                                <a href="#add-user" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="pagination" aria-label="Pagination">
+                <a href="#">Previous</a>
+                <a href="#" class="active" aria-current="page">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next</a>
+            </nav>
+
+            <!-- Add user form (the "Add user" and "Edit" buttons jump here using the id) -->
+            <section class="card" id="add-user" style="margin-top:32px;">
+                <h2>Add user</h2>
+
+                <form action="#" method="post">
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="full-name">Full name <span class="req">*</span></label>
+                            <input type="text" id="full-name" name="full_name" maxlength="80" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="role">Role <span class="req">*</span></label>
+                            <select id="role" name="role" required>
+                <option value="">Select a role</option>
+                <option>Student</option>
+                <option>Teacher</option>
+                <option>Admin</option>
+              </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="group">Batch or department</label>
+                            <select id="group" name="group">
+                <option value="">Not applicable</option>
+                <option>B.Tech CSE - 2nd year</option>
+                <option>B.Tech CSE - 3rd year</option>
+                <option>B.Tech CSE - 4th year</option>
+                <option>Computer Science</option>
+                <option>Administration</option>
+              </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="password">Temporary password <span class="req">*</span></label>
+                            <input type="password" id="password" name="password" minlength="8" autocomplete="new-password" required>
+                            <span class="hint">At least 8 characters.</span>
+                        </div>
+
+                        <div class="field">
+                            <label for="account-status">Account status</label>
+                            <select id="account-status" name="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+                        </div>
+
+                        <div class="field full">
+                            <fieldset class="group">
+                                <legend>Options</legend>
+                                <div class="choice-row">
+                                    <label><input type="checkbox" name="force_change" checked> Ask for a new password at first login</label>
+                                    <label><input type="checkbox" name="send_email"> Send a welcome email</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-outline">Reset form</button>
+                        <button type="submit" class="btn">Add user</button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

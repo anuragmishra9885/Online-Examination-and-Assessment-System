@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Performance reports for exams and students.">
+    <title>Reports | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Styles used only on this page (internal CSS): CSS-only bar charts -->
+    <style>
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+        
+        .bar-row {
+            display: grid;
+            grid-template-columns: 140px 1fr 48px;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .bar-label {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        .bar-track {
+            height: 18px;
+            border-radius: 999px;
+            background: #eef2f7;
+            overflow: hidden;
+        }
+        /* the width comes from the --value variable set on each bar in the HTML */
+        
+        .bar-fill {
+            width: var(--value);
+            height: 100%;
+            border-radius: 999px;
+            background: var(--main);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        
+        .bar-fill.low {
+            background: #b91c1c;
+        }
+        
+        .bar-value {
+            text-align: right;
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        .chart-note {
+            margin-top: 4px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        @media (max-width: 480px) {
+            .bar-row {
+                grid-template-columns: 100px 1fr 44px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html" class="active" aria-current="page">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Reports</h1>
+                    <p>How students are performing across exams and subjects.</p>
+                </div>
+                <a href="../results/results.html" class="btn btn-outline">View all results</a>
+            </header>
+
+            <!-- Report filters -->
+            <form class="toolbar" action="#" method="get">
+                <div class="field">
+                    <label for="period">Period</label>
+                    <select id="period" name="period">
+            <option>Last 30 days</option>
+            <option>Last 3 months</option>
+            <option>This semester</option>
+            <option>All time</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="batch">Batch</label>
+                    <select id="batch" name="batch">
+            <option value="">All batches</option>
+            <option>B.Tech CSE - 2nd year</option>
+            <option>B.Tech CSE - 3rd year</option>
+            <option>B.Tech CSE - 4th year</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+            <option value="">All subjects</option>
+            <option>Data Structures</option>
+            <option>Database Systems</option>
+            <option>Web Technologies</option>
+            <option>Operating Systems</option>
+          </select>
+                </div>
+
+                <button type="submit" class="btn">Generate report</button>
+            </form>
+
+            <!-- Summary cards -->
+            <section class="stats" aria-label="Report summary">
+                <div class="stat"><span>Exams completed</span><strong>15</strong></div>
+                <div class="stat"><span>Total attempts</span><strong>152</strong></div>
+                <div class="stat"><span>Pass rate</span><strong>86%</strong></div>
+                <div class="stat"><span>Average score</span><strong>68%</strong></div>
+            </section>
+
+            <!-- Charts (pure CSS: each bar's width is set by --value) -->
+            <div class="chart-grid">
+
+                <section class="card" aria-labelledby="chart-subject">
+                    <h2 id="chart-subject">Average score by subject</h2>
+
+                    <div class="bar-row">
+                        <span class="bar-label">Web Technologies</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 78%"></div>
+                        </div>
+                        <span class="bar-value">78%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">Database Systems</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 71%"></div>
+                        </div>
+                        <span class="bar-value">71%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">Data Structures</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 66%"></div>
+                        </div>
+                        <span class="bar-value">66%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">Operating Systems</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 57%"></div>
+                        </div>
+                        <span class="bar-value">57%</span>
+                    </div>
+
+                    <p class="chart-note">Operating Systems has the lowest average, so it may need extra revision.</p>
+                </section>
+
+                <section class="card" aria-labelledby="chart-grades">
+                    <h2 id="chart-grades">Students per grade</h2>
+
+                    <div class="bar-row">
+                        <span class="bar-label">A+ (90% and above)</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 44%"></div>
+                        </div>
+                        <span class="bar-value">18</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">A (80-89%)</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 83%"></div>
+                        </div>
+                        <span class="bar-value">34</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">B (70-79%)</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 100%"></div>
+                        </div>
+                        <span class="bar-value">41</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">C (60-69%)</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 73%"></div>
+                        </div>
+                        <span class="bar-value">30</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">D (40-59%)</span>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="--value: 20%"></div>
+                        </div>
+                        <span class="bar-value">8</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">F (below 40%)</span>
+                        <div class="bar-track">
+                            <div class="bar-fill low" style="--value: 51%"></div>
+                        </div>
+                        <span class="bar-value">21</span>
+                    </div>
+
+                    <p class="chart-note">Grade F means failed. Bars are scaled to the largest group (grade B).</p>
+                </section>
+
+            </div>
+
+            <!-- Exam-wise summary table -->
+            <section aria-labelledby="summary-title">
+                <h2 id="summary-title" style="font-size:18px;color:var(--ink);margin:4px 0 12px;">Latest exams</h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <caption style="position:absolute;left:-9999px;">Summary of the latest exams</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Exam</th>
+                                <th scope="col">Subject</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Attempts</th>
+                                <th scope="col">Average</th>
+                                <th scope="col">Highest</th>
+                                <th scope="col">Lowest</th>
+                                <th scope="col">Pass rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML Basics Quiz</td>
+                                <td>Web Technologies</td>
+                                <td>5 Sep 2026</td>
+                                <td>30</td>
+                                <td>78%</td>
+                                <td>96%</td>
+                                <td>40%</td>
+                                <td>93%</td>
+                            </tr>
+                            <tr>
+                                <td>SQL Basics</td>
+                                <td>Database Systems</td>
+                                <td>12 Sep 2026</td>
+                                <td>28</td>
+                                <td>71%</td>
+                                <td>90%</td>
+                                <td>33%</td>
+                                <td>86%</td>
+                            </tr>
+                            <tr>
+                                <td>Process Scheduling Quiz</td>
+                                <td>Operating Systems</td>
+                                <td>28 Aug 2026</td>
+                                <td>24</td>
+                                <td>57%</td>
+                                <td>85%</td>
+                                <td>30%</td>
+                                <td>71%</td>
+                            </tr>
+                            <tr>
+                                <td>Stacks and Queues</td>
+                                <td>Data Structures</td>
+                                <td>18 Aug 2026</td>
+                                <td>22</td>
+                                <td>66%</td>
+                                <td>96%</td>
+                                <td>35%</td>
+                                <td>82%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="chart-note" style="margin-top:12px;">
+                    To save this report as a PDF, press Ctrl + P and choose "Save as PDF". The sidebar and buttons are hidden in the printout.
+                </p>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

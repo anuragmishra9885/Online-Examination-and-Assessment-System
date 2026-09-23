@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exam results for all students.">
+    <title>Results | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html" class="active" aria-current="page">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Results</h1>
+                    <p>Scores and pass or fail status for every completed exam.</p>
+                </div>
+                <a href="../reports/reports.html" class="btn">View reports</a>
+            </header>
+
+            <!-- Summary cards -->
+            <section class="stats" aria-label="Results summary">
+                <div class="stat"><span>Total attempts</span><strong>152</strong></div>
+                <div class="stat"><span>Passed</span><strong>131</strong></div>
+                <div class="stat"><span>Failed</span><strong>21</strong></div>
+                <div class="stat"><span>Average score</span><strong>68%</strong></div>
+            </section>
+
+            <!-- Filters -->
+            <form class="toolbar" action="#" method="get">
+                <div class="field grow">
+                    <label for="search">Search results</label>
+                    <input type="search" id="search" name="search" placeholder="Search by student name or roll number">
+                </div>
+
+                <div class="field">
+                    <label for="exam">Exam</label>
+                    <select id="exam" name="exam">
+            <option value="">All exams</option>
+            <option>SQL Basics</option>
+            <option>HTML Basics Quiz</option>
+            <option>Process Scheduling Quiz</option>
+            <option>Stacks and Queues</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="result">Result</label>
+                    <select id="result" name="result">
+            <option value="">Passed and failed</option>
+            <option>Passed</option>
+            <option>Failed</option>
+          </select>
+                </div>
+
+                <button type="submit" class="btn btn-outline">Apply filters</button>
+            </form>
+
+            <!-- Results table
+           Pass mark for these exams is 40%. Grades: A+ 90 and above, A 80-89, B 70-79, C 60-69, D 40-59, F below 40 -->
+            <div class="table-wrap">
+                <table>
+                    <caption style="position:absolute;left:-9999px;">Exam results</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Roll no.</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Exam</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Percentage</th>
+                            <th scope="col">Grade</th>
+                            <th scope="col">Result</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2415000101</td>
+                            <td>Riya Sharma</td>
+                            <td>SQL Basics</td>
+                            <td>12 Sep 2026</td>
+                            <td>23 / 30</td>
+                            <td>77%</td>
+                            <td>B</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2415000117</td>
+                            <td>Aman Verma</td>
+                            <td>SQL Basics</td>
+                            <td>12 Sep 2026</td>
+                            <td>20 / 30</td>
+                            <td>67%</td>
+                            <td>C</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2415000132</td>
+                            <td>Neha Singh</td>
+                            <td>SQL Basics</td>
+                            <td>12 Sep 2026</td>
+                            <td>27 / 30</td>
+                            <td>90%</td>
+                            <td>A+</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2315000208</td>
+                            <td>Karan Mehta</td>
+                            <td>SQL Basics</td>
+                            <td>12 Sep 2026</td>
+                            <td>15 / 30</td>
+                            <td>50%</td>
+                            <td>D</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2515000045</td>
+                            <td>Pooja Yadav</td>
+                            <td>SQL Basics</td>
+                            <td>12 Sep 2026</td>
+                            <td>19 / 30</td>
+                            <td>63%</td>
+                            <td>C</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2315000219</td>
+                            <td>Rohit Gupta</td>
+                            <td>SQL Basics</td>
+                            <td>12 Sep 2026</td>
+                            <td>10 / 30</td>
+                            <td>33%</td>
+                            <td>F</td>
+                            <td><span class="badge fail">Failed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2415000101</td>
+                            <td>Riya Sharma</td>
+                            <td>HTML Basics Quiz</td>
+                            <td>5 Sep 2026</td>
+                            <td>22 / 25</td>
+                            <td>88%</td>
+                            <td>A</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>2515000045</td>
+                            <td>Pooja Yadav</td>
+                            <td>HTML Basics Quiz</td>
+                            <td>5 Sep 2026</td>
+                            <td>24 / 25</td>
+                            <td>96%</td>
+                            <td>A+</td>
+                            <td><span class="badge pass">Passed</span></td>
+                            <td class="actions"><a href="result-detail.html" class="btn btn-outline btn-sm">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="pagination" aria-label="Pagination">
+                <a href="#">Previous</a>
+                <a href="#" class="active" aria-current="page">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next</a>
+            </nav>
+
+        </main>
+    </div>
+</body>
+
+</html>

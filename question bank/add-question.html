@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add a new question to the question bank.">
+    <title>Add Question | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html">Exams</a>
+                <a href="../question-bank/question-bank.html" class="active" aria-current="page">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Add question</h1>
+                    <p>Fields marked <span class="req">*</span> are required.</p>
+                </div>
+                <a href="question-bank.html" class="btn btn-outline">Back to question bank</a>
+            </header>
+
+            <form action="#" method="post">
+
+                <!-- 1. Question details -->
+                <section class="card">
+                    <h2>Question</h2>
+                    <div class="form-grid">
+
+                        <div class="field full">
+                            <label for="question">Question text <span class="req">*</span></label>
+                            <textarea id="question" name="question" placeholder="Type the full question here" required></textarea>
+                        </div>
+
+                        <div class="field full">
+                            <fieldset class="group">
+                                <legend>Question type <span class="req">*</span></legend>
+                                <div class="choice-row">
+                                    <label><input type="radio" name="type" value="mcq" checked> Multiple choice</label>
+                                    <label><input type="radio" name="type" value="truefalse"> True / False</label>
+                                    <label><input type="radio" name="type" value="descriptive"> Descriptive</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 2. Answer options -->
+                <section class="card">
+                    <h2>Answer options</h2>
+                    <p class="hint" style="margin-bottom:14px;">
+                        Fill these in for multiple choice questions. For True / False or Descriptive, leave them empty.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="opt-a">Option A</label>
+                            <input type="text" id="opt-a" name="option_a" maxlength="200">
+                        </div>
+
+                        <div class="field">
+                            <label for="opt-b">Option B</label>
+                            <input type="text" id="opt-b" name="option_b" maxlength="200">
+                        </div>
+
+                        <div class="field">
+                            <label for="opt-c">Option C</label>
+                            <input type="text" id="opt-c" name="option_c" maxlength="200">
+                        </div>
+
+                        <div class="field">
+                            <label for="opt-d">Option D</label>
+                            <input type="text" id="opt-d" name="option_d" maxlength="200">
+                        </div>
+
+                        <div class="field full">
+                            <fieldset class="group">
+                                <legend>Correct answer</legend>
+                                <div class="choice-row">
+                                    <label><input type="radio" name="correct" value="a"> A</label>
+                                    <label><input type="radio" name="correct" value="b"> B</label>
+                                    <label><input type="radio" name="correct" value="c"> C</label>
+                                    <label><input type="radio" name="correct" value="d"> D</label>
+                                    <label><input type="radio" name="correct" value="true"> True</label>
+                                    <label><input type="radio" name="correct" value="false"> False</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 3. Classification and marks -->
+                <section class="card">
+                    <h2>Subject, difficulty, and marks</h2>
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="subject">Subject <span class="req">*</span></label>
+                            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option>Data Structures</option>
+                <option>Database Systems</option>
+                <option>Web Technologies</option>
+                <option>Operating Systems</option>
+              </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="topic">Topic</label>
+                            <input type="text" id="topic" name="topic" placeholder="e.g. Flexbox, Joins, Stacks" maxlength="60">
+                        </div>
+
+                        <div class="field">
+                            <label for="difficulty">Difficulty <span class="req">*</span></label>
+                            <select id="difficulty" name="difficulty" required>
+                <option value="">Select a level</option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+              </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="marks">Marks <span class="req">*</span></label>
+                            <input type="number" id="marks" name="marks" min="1" max="20" value="1" required>
+                        </div>
+
+                        <div class="field full">
+                            <label for="explanation">Explanation (shown in answer review)</label>
+                            <textarea id="explanation" name="explanation" placeholder="Why is this the correct answer?"></textarea>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Actions -->
+                <div class="form-actions">
+                    <a href="question-bank.html" class="btn btn-outline">Cancel</a>
+                    <button type="reset" class="btn btn-outline">Reset form</button>
+                    <button type="submit" name="action" value="save-another" class="btn btn-outline">Save and add another</button>
+                    <button type="submit" name="action" value="save" class="btn">Save question</button>
+                </div>
+
+            </form>
+
+        </main>
+    </div>
+</body>
+
+</html>

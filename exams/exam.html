@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage all exams in the Online Examination and Assessment System.">
+    <title>Exams | Online Examination and Assessment System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- ===== Sidebar (copy this block into every dashboard page) ===== -->
+        <aside class="sidebar">
+            <div class="brand">
+                Online Exam System
+                <small>Examination and Assessment</small>
+            </div>
+
+            <nav aria-label="Main menu">
+                <a href="../exams/exams.html" class="active" aria-current="page">Exams</a>
+                <a href="../question-bank/question-bank.html">Question Bank</a>
+                <a href="../students/students.html">Students</a>
+                <a href="../results/results.html">Results</a>
+                <a href="../reports/reports.html">Reports</a>
+                <a href="../admin/admin.html">Admin</a>
+            </nav>
+
+            <div class="user-box">
+                <strong>Teacher</strong> Signed in
+            </div>
+        </aside>
+
+        <!-- ===== Main content ===== -->
+        <main class="content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Exams</h1>
+                    <p>Create, schedule, and review every exam in one place.</p>
+                </div>
+                <a href="create-exam.html" class="btn">Create exam</a>
+            </header>
+
+            <!-- Summary cards -->
+            <section class="stats" aria-label="Exam summary">
+                <div class="stat"><span>Total exams</span><strong>24</strong></div>
+                <div class="stat"><span>Scheduled</span><strong>6</strong></div>
+                <div class="stat"><span>Live now</span><strong>2</strong></div>
+                <div class="stat"><span>Completed</span><strong>15</strong></div>
+            </section>
+
+            <!-- Filters (works as a real form; filtering itself needs a backend or JavaScript) -->
+            <form class="toolbar" action="#" method="get">
+                <div class="field grow">
+                    <label for="search">Search exams</label>
+                    <input type="search" id="search" name="search" placeholder="Search by exam title">
+                </div>
+
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+            <option value="">All subjects</option>
+            <option>Data Structures</option>
+            <option>Database Systems</option>
+            <option>Web Technologies</option>
+            <option>Operating Systems</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+            <option value="">All statuses</option>
+            <option>Draft</option>
+            <option>Scheduled</option>
+            <option>Live</option>
+            <option>Completed</option>
+          </select>
+                </div>
+
+                <button type="submit" class="btn btn-outline">Apply filters</button>
+            </form>
+
+            <!-- Exams table -->
+            <div class="table-wrap">
+                <table>
+                    <caption class="sr-only" style="position:absolute;left:-9999px;">List of exams</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Exam</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Marks</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mid-term Test 1 <span class="sub">40 questions</span></td>
+                            <td>Data Structures</td>
+                            <td>22 Sep 2026</td>
+                            <td>60 min</td>
+                            <td>40</td>
+                            <td><span class="badge scheduled">Scheduled</span></td>
+                            <td class="actions">
+                                <a href="exam-paper.html" class="btn btn-outline btn-sm">View</a>
+                                <a href="create-exam.html" class="btn btn-outline btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HTML and CSS Quiz <span class="sub">25 questions</span></td>
+                            <td>Web Technologies</td>
+                            <td>20 Sep 2026</td>
+                            <td>30 min</td>
+                            <td>25</td>
+                            <td><span class="badge live">Live</span></td>
+                            <td class="actions">
+                                <a href="exam-paper.html" class="btn btn-outline btn-sm">View</a>
+                                <a href="create-exam.html" class="btn btn-outline btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SQL Basics <span class="sub">30 questions</span></td>
+                            <td>Database Systems</td>
+                            <td>12 Sep 2026</td>
+                            <td>45 min</td>
+                            <td>30</td>
+                            <td><span class="badge completed">Completed</span></td>
+                            <td class="actions">
+                                <a href="exam-paper.html" class="btn btn-outline btn-sm">View</a>
+                                <a href="../results/results.html" class="btn btn-outline btn-sm">Results</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Process Scheduling <span class="sub">20 questions</span></td>
+                            <td>Operating Systems</td>
+                            <td>Not set</td>
+                            <td>40 min</td>
+                            <td>20</td>
+                            <td><span class="badge draft">Draft</span></td>
+                            <td class="actions">
+                                <a href="create-exam.html" class="btn btn-outline btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="pagination" aria-label="Pagination">
+                <a href="#">Previous</a>
+                <a href="#" class="active" aria-current="page">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next</a>
+            </nav>
+
+        </main>
+    </div>
+</body>
+
+</html>
